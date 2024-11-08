@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+$bg-color: #093944;
+$text-color: #ffffff;
+$details-color: #90a5a9;
+$preheading-color: #00a599;
+$border-color: #20545f;
+
+*,
+::before,
+::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media screen and (min-width: 200px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+@function px-to-rem($value) {
+  $fontsize: 16px;
+  @return (1rem / $fontsize) * $value;
+}
+body {
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw;
+  background-color: $bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq {
+  // for mobile screen
+  @include respond-to(mobile) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: px-to-rem(16px);
+    gap: px-to-rem(30px);
+
+    &__sectionheading {
+      display: flex;
+      flex-direction: column;
+    }
+    &__preheading {
+      text-transform: uppercase;
+      font-size: px-to-rem(14px);
+      line-height: px-to-rem(24px);
+      letter-spacing: px-to-rem(1.5px);
+      color: $preheading-color;
+    }
+
+    &__heading {
+      font-size: px-to-rem(28px);
+      line-height: px-to-rem(48px);
+      color: $text-color;
+    }
+
+    &__button {
+      border: 1px solid $text-color;
+      padding: 18px 48px;
+      width: fit-content;
+      border-radius: px-to-rem(50px);
+      font-size: px-to-rem(15px);
+      line-height: 20px;
+      text-align: center;
+      color: $text-color;
+      background-color: transparent;
+      margin-top: px-to-rem(20px);
+    }
+
+    &__questions {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__details {
+      border-bottom: 1px solid $border-color;
+      padding-bottom: px-to-rem(24px);
+      padding-top: px-to-rem(24px);
+      color: $details-color;
+      line-height: px-to-rem(28px);
+      font-size: px-to-rem(17px);
+    }
+
+    &__summary {
+      font-size: 20px;
+      line-height: 28px;
+      color: $text-color;
+      text-transform: capitalize;
+    }
+
+    // setting the font-weight
+    &__font-weight {
+      font-weight: 400;
+    }
+  }
+
+  @include respond-to(tablet) {
+    width: 90%;
+  }
+
+  @include respond-to(desktop) {
+    max-width: 1240px;
+    width: 90%;
+    grid-template-columns: repeat(5, 1fr);
+
+    &__sectionheading {
+      grid-column: 1 / span 2;
+    }
+
+    &__heading {
+      width: px-to-rem(300px);
+    }
+
+    &__questions {
+      grid-column: 3 / span 5;
+    }
+    &__details {
+      transition: all 500ms ease-in-out;
+    }
+
+    &__summary {
+      list-style: none;
+    }
+    &__summary::before {
+      content: "\25BE";
+      float: right;
+    }
+    @at-root details[open] .faq__summary::before {
+      content: "\25B4";
+    }
+  }
+}
