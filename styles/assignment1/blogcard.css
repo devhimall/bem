@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+*,
+::before,
+::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", serif;
+  background-color: #f3f8ff;
+}
+
+.blog {
+  padding: 10px 20px;
+}
+.blog__heading {
+  width: 100%;
+  text-align: center;
+  color: #02033b;
+  font-size: 1.625rem;
+  margin-bottom: 2rem;
+  line-height: 4.6875rem;
+}
+.blog__card {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+.blog__item {
+  position: relative;
+  background-color: #ffffff;
+  width: 100%;
+  height: 33.375rem;
+  border-radius: 48px;
+  overflow: hidden;
+  box-shadow: 0px 10px 15px -13px rgba(0, 0, 0, 0.1);
+}
+.blog__item:first-child .blog__body, .blog__item:nth-child(2) .blog__body, .blog__item:nth-child(3) .blog__body {
+  padding-top: 2.9375rem;
+  padding-bottom: 3rem;
+  padding-left: 3rem;
+}
+.blog__item:first-child .card__title, .blog__item:nth-child(2) .card__title, .blog__item:nth-child(3) .card__title {
+  color: #02033b;
+  font-weight: 700;
+  text-transform: capitalize;
+  line-height: 1.875rem;
+}
+.blog__item:first-child .card__description, .blog__item:nth-child(2) .card__description, .blog__item:nth-child(3) .card__description {
+  font-weight: 400;
+  color: #02033b;
+  line-height: 1.5rem;
+}
+.blog__item:first-child .card__title, .blog__item:nth-child(2) .card__title {
+  font-size: 1.125rem;
+}
+.blog__item:first-child .card__description, .blog__item:nth-child(2) .card__description {
+  font-size: 1rem;
+  line-height: 24px;
+}
+.blog__item:first-child .blog__body {
+  padding-right: 3.13125rem;
+}
+.blog__item:nth-child(2) .blog__body {
+  padding-right: 3.296875rem;
+}
+.blog__item:nth-child(3) .blog__body .card__title {
+  padding-right: 3.074375rem;
+  font-size: 1.25rem;
+}
+.blog__item:nth-child(3) .blog__body .card__description {
+  font-size: 0.9375rem;
+}
+.blog__image {
+  height: 180px;
+  width: 100%;
+}
+.blog__image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+.blog__body {
+  height: 100%;
+  width: 100%;
+  padding: 47px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.blog__button {
+  background-color: #f3f8ff;
+  color: #02033b;
+  border: none;
+  border-radius: 48px;
+  text-transform: capitalize;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 20px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  padding: 12px 21px;
+  text-align: center;
+  font-family: "Inter";
+}
+.blog__link {
+  width: 100%;
+  text-align: center;
+  margin: 60px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blog__link a {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 15px 25px;
+  border: none;
+  background-color: #ffc247;
+  border-radius: 42px;
+  font-weight: 800;
+  font-size: 1.1875rem;
+  line-height: 1.40625rem;
+  text-align: center;
+  color: #02033b;
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  justify-content: center;
+}
+.blog__link a:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .blog__heading {
+    padding: 54px 0px;
+    font-size: 2.5rem;
+  }
+  .blog__card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .blog__heading {
+    font-size: 3.5rem;
+  }
+  .blog__item:first-child .card__title, .blog__item:nth-child(2) .card__title {
+    font-size: 1.4375rem;
+  }
+  .blog__item:nth-child(3) .blog__body .card__title {
+    font-size: 1.5rem;
+  }
+  .blog__card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1056px) and (min-width: 768px) {
+  .blog {
+    max-width: 1056px;
+    margin: auto;
+  }
+}/*# sourceMappingURL=blogcard.css.map */

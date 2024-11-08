@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+// constant variables of colors
+$section-title-color: #02033b;
+$card-bg-color: #ffffff;
+$background-color: #f3f8ff;
+$font-size: 16px;
+$btn-bg-color: #ffc247;
+
+*,
+::before,
+::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+@function px-to-rem($value) {
+  // this retuns a rem value.
+  @return (1rem/16px) * $value;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", serif;
+  background-color: $background-color;
+}
+
+.blog {
+  padding: 10px 20px;
+
+  &__heading {
+    width: 100%;
+    text-align: center;
+    color: $section-title-color;
+    font-size: px-to-rem(26px);
+    margin-bottom: px-to-rem(32px);
+    line-height: px-to-rem(75px);
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 48px;
+  }
+
+  &__item {
+    position: relative;
+    background-color: $card-bg-color;
+    width: 100%;
+    height: px-to-rem(534px);
+    border-radius: 48px;
+    overflow: hidden;
+    box-shadow: 0px 10px 15px -13px rgba(0, 0, 0, 0.1);
+
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(3) {
+      .blog__body {
+        padding-top: px-to-rem(47px);
+        padding-bottom: px-to-rem(48px);
+        padding-left: px-to-rem(48px);
+      }
+
+      .card__title {
+        color: $section-title-color;
+        font-weight: 700;
+        text-transform: capitalize;
+        line-height: px-to-rem(30px);
+      }
+
+      .card__description {
+        font-weight: 400;
+        color: $section-title-color;
+        line-height: px-to-rem(24px);
+      }
+    }
+
+    // font-size of the first and second child is 23px
+    &:first-child,
+    &:nth-child(2) {
+      .card__title {
+        font-size: px-to-rem(18px);
+      }
+      .card__description {
+        font-size: px-to-rem(16px);
+        line-height: 24px;
+      }
+    }
+
+    &:first-child {
+      .blog__body {
+        padding-right: px-to-rem(50.1px);
+      }
+    }
+
+    &:nth-child(2) {
+      .blog__body {
+        padding-right: px-to-rem(52.75px);
+      }
+    }
+
+    &:nth-child(3) {
+      .blog__body {
+        .card__title {
+          padding-right: px-to-rem(49.19px);
+          // font-size of the third child heading to 24px
+          font-size: px-to-rem(20px);
+        }
+
+        .card__description {
+          font-size: px-to-rem(15px);
+        }
+      }
+    }
+  }
+
+  &__image {
+    height: 180px;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  &__body {
+    height: 100%;
+    width: 100%;
+    padding: 47px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__button {
+    background-color: $background-color;
+    color: $section-title-color;
+    border: none;
+    border-radius: 48px;
+    text-transform: capitalize;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 20px;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    padding: 12px 21px;
+    text-align: center;
+    font-family: "Inter";
+  }
+
+  &__link {
+    width: 100%;
+    text-align: center;
+    margin: 60px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      width: fit-content;
+      padding: 15px 25px;
+      border: none;
+      background-color: $btn-bg-color;
+      border-radius: 42px;
+      font-weight: 800;
+      font-size: px-to-rem(19px);
+      line-height: px-to-rem(22.5px);
+      text-align: center;
+      color: $section-title-color;
+      display: flex;
+      gap: 11px;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .blog {
+    &__heading {
+      padding: 54px 0px;
+      font-size: px-to-rem(40px);
+    }
+    &__card {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .blog {
+    &__heading {
+      font-size: px-to-rem(56px);
+    }
+    &__item {
+      &:first-child,
+      &:nth-child(2) {
+        .card__title {
+          font-size: px-to-rem(23px);
+        }
+      }
+
+      &:nth-child(3) {
+        .blog__body {
+          .card__title {
+            // font-size of the third child heading to 24px
+            font-size: px-to-rem(24px);
+          }
+        }
+      }
+    }
+    &__card {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media screen and (min-width: 1056px) {
+  @media screen and (min-width: 768px) {
+    .blog {
+      max-width: 1056px;
+      margin: auto;
+    }
+  }
+}
