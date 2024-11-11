@@ -13,6 +13,7 @@ $btn-bg-color: #ffc247;
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  font-family: "Inter", serif;
 }
 
 @function px-to-rem($value) {
@@ -28,7 +29,6 @@ body {
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  font-family: "Inter", serif;
   background-color: $background-color;
 }
 

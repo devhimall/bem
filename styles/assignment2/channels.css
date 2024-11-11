@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+*,
+::before,
+::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  background-color: #f6f7fb;
+}
+
+@media screen and (min-width: 200px) {
+  .channels {
+    padding: 1.25rem;
+    overflow: hidden;
+    height: 642px;
+  }
+  .channels__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  .channels__preheading {
+    color: #00a599;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0.09375rem;
+    text-align: center;
+  }
+  .channels__sectionheading {
+    color: #202020;
+    font-weight: 400;
+    font-size: 28px;
+    text-transform: capitalize;
+    line-height: 3rem;
+    text-align: center;
+  }
+  .channels__logos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+  .channels__logos-logo {
+    background-color: #ffffff;
+    border-radius: 0.1875rem;
+    border: none;
+    overflow: hidden;
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+  }
+  .channels__logos-logo img {
+    height: 8.1875rem;
+    width: 14.3125rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .channels {
+    padding: 1.875rem;
+  }
+  .channels__logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .channels__logos-logo {
+    height: 180px;
+    width: 280px;
+  }
+  .channels__logos-logo img {
+    height: 6.25rem;
+    width: 12.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .channels {
+    width: 90%;
+    margin: auto;
+    height: 642px;
+  }
+  .channels__logos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .channels__sectionheading {
+    font-size: 2.375rem;
+    text-align: center;
+  }
+  .channels__logos-logo {
+    height: 14.4375rem;
+    width: 21.1875rem;
+  }
+  .channels__logos-logo img {
+    height: 8.1875rem;
+    width: 14.3125rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .channels {
+    max-width: 1240px;
+    margin: auto;
+  }
+}/*# sourceMappingURL=channels.css.map */
