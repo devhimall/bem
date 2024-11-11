@@ -1,0 +1,14 @@
+body {
+  width: 90%;
+  margin: auto;
+}
+
+.assignment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.assignment .assignment__link {
+  text-transform: capitalize;
+  text-decoration: none;
+}/*# sourceMappingURL=styles.css.map */
